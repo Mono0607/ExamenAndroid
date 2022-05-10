@@ -15,7 +15,7 @@
 
         <ImageView
             android:id="@+id/ivPersonaje"
-            android:layout_width="220dp"
+            android:layout_width="180dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -23,6 +23,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.0"
             tools:srcCompat="@tools:sample/avatars" />
 
         <ImageView
@@ -42,8 +43,10 @@
             android:background="#3C0D0D"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/ivPersonaje"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tvNombre"
@@ -59,64 +62,119 @@
             app:layout_constraintTop_toTopOf="@+id/imageView" />
 
         <TextView
-            android:id="@+id/tvHobby"
+            android:id="@+id/tvCoste"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_marginTop="20dp"
+            android:text="Maná"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tvCoste2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/tvTipo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Hobby"
+            android:layout_marginTop="20dp"
+            android:text="Tipo"
             android:textColor="#FFFFFF"
-            android:textSize="22sp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tvTipo2"
+            app:layout_constraintTop_toBottomOf="@+id/tvCoste2" />
+
+        <TextView
+            android:id="@+id/tvRareza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Rareza"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tvRareza2"
+            app:layout_constraintTop_toBottomOf="@+id/tvTipo2" />
+
+        <TextView
+            android:id="@+id/tvPoder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Poder"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tvPoder2"
+            app:layout_constraintTop_toBottomOf="@+id/tvRareza2" />
+
+        <TextView
+            android:id="@+id/tvDefensa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Defensa"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tvDefensa2"
+            app:layout_constraintTop_toBottomOf="@+id/tvPoder2" />
+
+        <TextView
+            android:id="@+id/tvDefensa2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Defensa: "
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/ivPersonaje"
+            app:layout_constraintTop_toBottomOf="@+id/tvPoder2" />
+
+        <TextView
+            android:id="@+id/tvRareza2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Rareza: "
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/ivPersonaje"
+            app:layout_constraintTop_toBottomOf="@+id/tvTipo2" />
+
+        <TextView
+            android:id="@+id/tvTipo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Tipo: "
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/ivPersonaje"
+            app:layout_constraintTop_toBottomOf="@+id/tvCoste2" />
+
+        <TextView
+            android:id="@+id/tvCoste2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Coste de maná: "
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/ivPersonaje"
             app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
         <TextView
-            android:id="@+id/tvPersonalidad"
+            android:id="@+id/tvPoder2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Personalidad"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Poder: "
             android:textColor="#FFFFFF"
-            android:textSize="22sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/ivPersonaje"
-            app:layout_constraintTop_toBottomOf="@+id/tvHobby" />
-
-        <TextView
-            android:id="@+id/tvCumple"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Cumpleaños"
-            android:textColor="#FFFFFF"
-            android:textSize="22sp"
-            app:layout_constraintStart_toEndOf="@+id/ivPersonaje"
-            app:layout_constraintTop_toBottomOf="@+id/tvPersonalidad" />
-
-        <TextView
-            android:id="@+id/tvEspecie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Especie"
-            android:textColor="#FFFFFF"
-            android:textSize="22sp"
-            app:layout_constraintStart_toEndOf="@+id/ivPersonaje"
-            app:layout_constraintTop_toBottomOf="@+id/tvCumple" />
-
-        <TextView
-            android:id="@+id/tvGenero"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Género"
-            android:textColor="#FFFFFF"
-            android:textSize="22sp"
-            app:layout_constraintStart_toEndOf="@+id/ivPersonaje"
-            app:layout_constraintTop_toBottomOf="@+id/tvEspecie" />
+            app:layout_constraintTop_toBottomOf="@+id/tvRareza2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

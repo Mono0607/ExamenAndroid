@@ -19,32 +19,33 @@ class AdaptadorPersonaje(val listaPersonajes: ArrayList<Personaje>): RecyclerVie
     override fun onBindViewHolder(holder: ViewHolder, position: Int){
         Picasso.get().load(listaPersonajes[position].imagen).into(holder.ivPersonaje)
         holder.tvNombre.text = listaPersonajes[position].nombre
-        holder.tvHobby.text = listaPersonajes[position].hobby
-        holder.tvPersonalidad.text = listaPersonajes[position].personalidad
-        holder.tvCumple.text = listaPersonajes[position].cumple
-        holder.tvEspecie.text = listaPersonajes[position].especie
-        holder.tvGenero.text = listaPersonajes[position].genero
+        holder.tvCoste.text = listaPersonajes[position].coste
+        holder.tvTipo.text = listaPersonajes[position].tipo
+        holder.tvRareza.text = listaPersonajes[position].rareza
+        holder.tvPoder.text = listaPersonajes[position].poder
+        holder.tvDefensa.text = listaPersonajes[position].defensa
     }
+
     override fun getItemCount(): Int {
         return  listaPersonajes.size
     }
     class ViewHolder(vista: View): RecyclerView.ViewHolder(vista){
         val ivPersonaje: ImageView
         val tvNombre: TextView
-        val tvHobby: TextView
-        val tvPersonalidad: TextView
-        val tvCumple: TextView
-        val tvEspecie: TextView
-        val tvGenero: TextView
+        val tvCoste: TextView
+        val tvTipo: TextView
+        val tvRareza: TextView
+        val tvPoder: TextView
+        val tvDefensa: TextView
 
         init {
             tvNombre = vista.findViewById(R.id.tvNombre)
             ivPersonaje= vista.findViewById(R.id.ivPersonaje)
-            tvHobby= vista.findViewById(R.id.tvHobby)
-            tvPersonalidad= vista.findViewById(R.id.tvPersonalidad)
-            tvCumple= vista.findViewById(R.id.tvCumple)
-            tvEspecie= vista.findViewById(R.id.tvEspecie)
-            tvGenero= vista.findViewById(R.id.tvGenero)
+            tvCoste= vista.findViewById(R.id.tvCoste)
+            tvTipo= vista.findViewById(R.id.tvTipo)
+            tvRareza= vista.findViewById(R.id.tvRareza)
+            tvPoder= vista.findViewById(R.id.tvPoder)
+            tvDefensa= vista.findViewById(R.id.tvDefensa)
         }
     }
 }
