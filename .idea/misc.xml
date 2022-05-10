@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/ExamenAndroid/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
-        <entry key="..\:/ExamenAndroid/app/src/main/res/layout/vista_individual.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Lalo_/AndroidStudioProjects/ExamenAndroid/app/src/main/res/drawable/buttonshape.xml" value="0.2985" />
+        <entry key="..\:/Users/Lalo_/AndroidStudioProjects/ExamenAndroid/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Lalo_/AndroidStudioProjects/ExamenAndroid/app/src/main/res/layout/vista_individual.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>
