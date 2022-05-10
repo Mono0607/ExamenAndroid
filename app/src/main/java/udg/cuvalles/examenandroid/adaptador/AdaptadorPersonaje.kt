@@ -8,9 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import udg.cuvalles.examenandroid.R
-import udg.cuvalles.examenandroid.modelo.Personaje
+import udg.cuvalles.examenandroid.modelo.Personajes
 
-class AdaptadorPersonaje(val listaPersonajes: ArrayList<Personaje>): RecyclerView.Adapter<AdaptadorPersonaje.ViewHolder>(){
+class AdaptadorPersonaje(val listaPersonajes: ArrayList<Personajes>): RecyclerView.Adapter<AdaptadorPersonaje.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
             R.layout.vista_individual,parent,false)
