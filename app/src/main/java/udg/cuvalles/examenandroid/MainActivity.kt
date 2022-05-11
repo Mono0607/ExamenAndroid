@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import udg.cuvalles.examenandroid.adaptador.AdaptadorJuegos
@@ -16,9 +17,9 @@ import udg.cuvalles.examenandroid.modelo.Juego
 
 class MainActivity : AppCompatActivity() {
     lateinit var btnIntegrantes: Button
-    lateinit var listaPersonajes:ArrayList<Juego>
+    lateinit var listaJuegos:ArrayList<Juego>
     lateinit var adapter: AdaptadorJuegos
-    lateinit var myRecycler: RecyclerView
+    lateinit var miRecycler: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,40 +31,35 @@ class MainActivity : AppCompatActivity() {
             val intentIntegrantes= Intent(this,Integrantes::class.java)
             startActivity(intentIntegrantes)
         }
-        listaPersonajes = ArrayList()
-        adapter = AdaptadorJuegos(listaPersonajes)
+        listaJuegos = ArrayList()
+        adapter = AdaptadorJuegos(listaJuegos)
 
-        myRecycler=findViewById(R.id.recyclerView)
-        myRecycler.adapter = adapter
-        getPersonajes()
+        miRecycler=findViewById(R.id.recyclerView)
+        miRecycler.adapter = adapter
+        getJuegos()
 
-        myRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        miRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
-    fun getPersonajes(){
+    fun getJuegos(){
         val queue = Volley.newRequestQueue(this)
-        val url = "https://api.magicthegathering.io/v1/cards"
+        val url = "https://www.mmobomb.com/api1/games"
 
-        val objectRequest = JsonObjectRequest(
-            Request.Method.GET,url,null,
+        val objectRequest = JsonArrayRequest(Request.Method.GET,url,null,
             Response.Listener{ respuesta ->
-
-                val personajesJson = respuesta.getJSONArray("cards")
-                for(indice in 0..personajesJson.length()-1){
-                    val personajeIndJson = personajesJson.getJSONObject(indice)
-                    val personaje = Juego(personajeIndJson.getString("name"),
-                        personajeIndJson.getString("imageUrl"),
-                        personajeIndJson.getString("manaCost"),
-                        personajeIndJson.getString("type"),
-                        personajeIndJson.getString("rarity"),
-                        personajeIndJson.getString("power"),
-                        personajeIndJson.getString("toughness"))
-                    listaPersonajes.add(personaje)
+                for(indice in 0..respuesta.length()-1){
+                    val juegosJson = respuesta.getJSONObject(indice)
+                    val juego = Juego(juegosJson.getString("title"),
+                        juegosJson.getString("thumbnail"),
+                        juegosJson.getString("genre"),
+                        juegosJson.getString("platform"),
+                        juegosJson.getString("publisher"))
+                    listaJuegos.add(juego)
                 }
                 adapter.notifyDataSetChanged()
             },
             Response.ErrorListener{
-                Log.e("PersonajesAPI","Error")
+                Log.e("JuegosAPI","Error")
             }
         )
         queue.add(objectRequest)
