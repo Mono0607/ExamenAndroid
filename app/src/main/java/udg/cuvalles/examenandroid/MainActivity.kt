@@ -11,13 +11,13 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import udg.cuvalles.examenandroid.adaptador.AdaptadorPersonaje
-import udg.cuvalles.examenandroid.modelo.Personajes
+import udg.cuvalles.examenandroid.adaptador.AdaptadorJuegos
+import udg.cuvalles.examenandroid.modelo.Juego
 
 class MainActivity : AppCompatActivity() {
     lateinit var btnIntegrantes: Button
-    lateinit var listaPersonajes:ArrayList<Personajes>
-    lateinit var adapter: AdaptadorPersonaje
+    lateinit var listaPersonajes:ArrayList<Juego>
+    lateinit var adapter: AdaptadorJuegos
     lateinit var myRecycler: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intentIntegrantes)
         }
         listaPersonajes = ArrayList()
-        adapter = AdaptadorPersonaje(listaPersonajes)
+        adapter = AdaptadorJuegos(listaPersonajes)
 
         myRecycler=findViewById(R.id.recyclerView)
         myRecycler.adapter = adapter
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                 val personajesJson = respuesta.getJSONArray("cards")
                 for(indice in 0..personajesJson.length()-1){
                     val personajeIndJson = personajesJson.getJSONObject(indice)
-                    val personaje = Personajes(personajeIndJson.getString("name"),
+                    val personaje = Juego(personajeIndJson.getString("name"),
                         personajeIndJson.getString("imageUrl"),
                         personajeIndJson.getString("manaCost"),
                         personajeIndJson.getString("type"),
